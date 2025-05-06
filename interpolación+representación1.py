@@ -80,19 +80,19 @@ P_teo_fit = exponential_model(T_smooth, a_teo, b_teo, c_teo)
 # Gráfica 
 plt.figure(figsize=(12, 7))
 
-
 plt.scatter(T_exp, P_exp, color='red', s=80, label='Presión experimental', zorder=5)
 
 plt.plot(T_smooth, P_exp_fit, color='red', linestyle='-', linewidth=2, 
-         label='Línea de tendencia', alpha=0.8)
+         label=f'Línea de tendnecia: P = {a_exp:.3f}·exp({b_exp:.3f}·T) + {c_exp:.3f}', alpha=0.8)
 
 plt.scatter(T_exp, P_teo_interp, color='blue', s=80, 
            label='Presión interpolada', zorder=5)
 
-plt.plot(T_smooth, P_teo_fit, color='blue', linestyle='-', linewidth=2,
-         label='Línea de tendencia', alpha=0.8)
 
-plt.title('Comparación de presiones experimentales y teóricas', fontsize=14)
+plt.plot(T_smooth, P_teo_fit, color='blue', linestyle='-', linewidth=2,
+         label=f'Línea de tendnecia: P = {a_teo:.3f}·exp({b_teo:.3f}·T) + {c_teo:.3f}', alpha=0.8)
+
+plt.title('P vs T', fontsize=14)
 plt.xlabel('T (°C)', fontsize=12)
 plt.ylabel('P (mmHg)', fontsize=12)
 plt.grid(True, linestyle='--', alpha=0.6)

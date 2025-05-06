@@ -68,7 +68,7 @@ plt.plot(inverse_T*1e6, ln_P, 'o', color='blue',
          markeredgewidth=0.5, label='Datos experimentales')
 
 plt.plot(inverse_T*1e6, linear_func(inverse_T, *popt), 
-         'r-', linewidth=2, label='Ajuste lineal')
+         'r-', linewidth=2, label=f'Línea de tendencia: ln(P₂/mmHg) = {a:.2e}/T₂ + {b:.2f}')
 
 plt.xlabel('1/T₂ (×10$^{-6}$ K$^{-1}$)', fontsize=12)
 plt.ylabel('ln(P₂/mmHg)', fontsize=12)
